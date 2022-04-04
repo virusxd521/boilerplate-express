@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 require('dotenv').config();
 
-
 // Building a simple logger with a middleware
 // (Learning middleware)
 app.use('/', (req, res, next) => {
@@ -37,7 +36,6 @@ app.get('/json', (req, res) => {
     }
 });
 
-
 // chaining middleware
 // I think it some how relates to closures
 app.get('/now', (req, res, next) => {
@@ -51,7 +49,6 @@ app.get('/now', (req, res, next) => {
     res.json(json_obj);
 });
 
-
 // echo server mounting 
 app.get('/:word/echo', (req, res) => {
     const echo_obj = {
@@ -60,15 +57,11 @@ app.get('/:word/echo', (req, res) => {
     res.json(echo_obj);
 })
 
+app.get('/name', (req, res) => {
+    const res_obj = {
+        name: `${req.query.first} ${req.query.last}`
+    }
+    res.json(res_obj);
+})
 
-
-
-
-
-
-
-
-
-
-
- module.exports = app;
+module.exports = app;
