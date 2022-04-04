@@ -6,7 +6,7 @@ require('dotenv').config();
 // Building a simple logger with a middleware
 // (Learning middleware)
 app.use('/', (req, res, next) => {
-    console.log(`${req.method} ${req.url} ${req.ip}`);
+    console.log(`${req.method} ${req.url} - ${req.ip}`);
     next();
 });
 
