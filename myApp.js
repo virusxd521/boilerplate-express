@@ -52,7 +52,13 @@ app.get('/now', (req, res, next) => {
 });
 
 
-
+// echo server mounting 
+app.get('/:word/echo', (req, res) => {
+    const echo_obj = {
+        echo: req.params.word
+    }
+    res.json(echo_obj);
+})
 
 
 
