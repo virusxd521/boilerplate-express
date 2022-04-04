@@ -1,6 +1,11 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 require('dotenv').config();
+const bodyParser = require('body-parser');
+
+
+// using body parser to parse post requests
+app.use(bodyParser.urlencoded({extended: false}));
 
 // Building a simple logger with a middleware
 // (Learning middleware)
