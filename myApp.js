@@ -3,18 +3,13 @@ var app = express();
 
 
 
-// The home route
+// The home route sending a static HTML file
 app.all('/', (req, res) => {
     res.sendFile(`${__dirname}/views/index.html`);
 });
 
 // The public route, with a middleware
 app.use('/public', express.static(`${__dirname}/public`));
-
-
-
-
-
 
 
 
