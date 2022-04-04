@@ -45,7 +45,10 @@ app.get('/now', (req, res, next) => {
     req.time = new Date().toString();    
     next();
 }, (req, res) => {
-    res.send(req.time);
+    const json_obj = {
+        time: req.time
+    }
+    res.json(json_obj);
 });
 
 
