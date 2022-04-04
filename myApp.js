@@ -38,6 +38,27 @@ app.get('/json', (req, res) => {
 });
 
 
+// chaining middleware
+// I think it some how relates to closures
+app.get('/now', (req, res, next) => {
+    // setting the current time to the time key into the request object
+    req.time = new Date().toString();    
+    next();
+}, (req, res) => {
+    res.send(req.time);
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
