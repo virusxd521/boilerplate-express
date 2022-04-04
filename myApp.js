@@ -69,4 +69,11 @@ app.get('/name', (req, res) => {
     res.json(res_obj);
 })
 
+app.post('/name', (req, res) => {
+    const res_obj = {
+        name: `${req.body.first} ${req.body.last}`
+    }
+    res.json(res_obj);
+});
+
 module.exports = app;
